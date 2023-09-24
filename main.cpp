@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "0150-evaluate-reverse-polish-notation.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -7,24 +8,12 @@
 
 using namespace std;
 
-class Solution {
-public:
-    bool containsDuplicate(vector<int>& nums) {
-        unordered_set<int> setNums;
-        for(int num : nums) {
-            setNums.insert(num);
-        }
-        return nums.size() != setNums.size();
-    }
-};
-
 int main() {
     ios
 
     Solution solution;
-    vector<int> nums = {1,2,3,1};
-
-    cout << solution.containsDuplicate(nums) << endl;
+    vector<string> tokens = {"4","-2","/","2","-3","-","-"};
+    cout << solution.evalRPN(tokens);
 
     return 0;
 }
