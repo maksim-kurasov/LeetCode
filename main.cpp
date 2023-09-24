@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0150-evaluate-reverse-polish-notation.cpp"
+#include "0022-generate-parentheses.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -12,8 +12,8 @@ int main() {
     ios
 
     Solution solution;
-    vector<string> tokens = {"4","-2","/","2","-3","-","-"};
-    cout << solution.evalRPN(tokens);
+    vector<string> ans = solution.generateParenthesis(3);
+    for(string &str : ans) cout << str << endl;
 
     return 0;
 }
