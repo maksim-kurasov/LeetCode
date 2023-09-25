@@ -139,6 +139,18 @@ build CMakeFiles/LeetCode.dir/0022-generate-parentheses.cpp.obj: CXX_COMPILER__L
   OBJECT_DIR = CMakeFiles\LeetCode.dir
   OBJECT_FILE_DIR = CMakeFiles\LeetCode.dir
 
+build CMakeFiles/LeetCode.dir/0739-daily-temperatures.cpp.obj: CXX_COMPILER__LeetCode_Debug C$:/projects/LeetCode/0739-daily-temperatures.cpp || cmake_object_order_depends_target_LeetCode
+  DEP_FILE = CMakeFiles\LeetCode.dir\0739-daily-temperatures.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\LeetCode.dir
+  OBJECT_FILE_DIR = CMakeFiles\LeetCode.dir
+
+build CMakeFiles/LeetCode.dir/0853-car-fleet.cpp.obj: CXX_COMPILER__LeetCode_Debug C$:/projects/LeetCode/0853-car-fleet.cpp || cmake_object_order_depends_target_LeetCode
+  DEP_FILE = CMakeFiles\LeetCode.dir\0853-car-fleet.cpp.obj.d
+  FLAGS = -g -std=gnu++23
+  OBJECT_DIR = CMakeFiles\LeetCode.dir
+  OBJECT_FILE_DIR = CMakeFiles\LeetCode.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LeetCode
@@ -147,7 +159,7 @@ build CMakeFiles/LeetCode.dir/0022-generate-parentheses.cpp.obj: CXX_COMPILER__L
 #############################################
 # Link the executable LeetCode.exe
 
-build LeetCode.exe: CXX_EXECUTABLE_LINKER__LeetCode_Debug CMakeFiles/LeetCode.dir/main.cpp.obj CMakeFiles/LeetCode.dir/0217-contains-duplicate.cpp.obj CMakeFiles/LeetCode.dir/0242-valid-anagram.cpp.obj CMakeFiles/LeetCode.dir/0001-two-sum.cpp.obj CMakeFiles/LeetCode.dir/0049-group-anagrams.cpp.obj CMakeFiles/LeetCode.dir/0347-top-k-frequent-elements.cpp.obj CMakeFiles/LeetCode.dir/0015-3sum.cpp.obj CMakeFiles/LeetCode.dir/0238-product-of-array-except-self.cpp.obj CMakeFiles/LeetCode.dir/0042-trapping-rain-water.cpp.obj CMakeFiles/LeetCode.dir/0036-valid-sudoku.cpp.obj CMakeFiles/LeetCode.dir/0128-longest-consecutive-sequence.cpp.obj CMakeFiles/LeetCode.dir/0020-valid-parentheses.cpp.obj CMakeFiles/LeetCode.dir/0155-min-stack.cpp.obj CMakeFiles/LeetCode.dir/0150-evaluate-reverse-polish-notation.cpp.obj CMakeFiles/LeetCode.dir/0022-generate-parentheses.cpp.obj
+build LeetCode.exe: CXX_EXECUTABLE_LINKER__LeetCode_Debug CMakeFiles/LeetCode.dir/main.cpp.obj CMakeFiles/LeetCode.dir/0217-contains-duplicate.cpp.obj CMakeFiles/LeetCode.dir/0242-valid-anagram.cpp.obj CMakeFiles/LeetCode.dir/0001-two-sum.cpp.obj CMakeFiles/LeetCode.dir/0049-group-anagrams.cpp.obj CMakeFiles/LeetCode.dir/0347-top-k-frequent-elements.cpp.obj CMakeFiles/LeetCode.dir/0015-3sum.cpp.obj CMakeFiles/LeetCode.dir/0238-product-of-array-except-self.cpp.obj CMakeFiles/LeetCode.dir/0042-trapping-rain-water.cpp.obj CMakeFiles/LeetCode.dir/0036-valid-sudoku.cpp.obj CMakeFiles/LeetCode.dir/0128-longest-consecutive-sequence.cpp.obj CMakeFiles/LeetCode.dir/0020-valid-parentheses.cpp.obj CMakeFiles/LeetCode.dir/0155-min-stack.cpp.obj CMakeFiles/LeetCode.dir/0150-evaluate-reverse-polish-notation.cpp.obj CMakeFiles/LeetCode.dir/0022-generate-parentheses.cpp.obj CMakeFiles/LeetCode.dir/0739-daily-temperatures.cpp.obj CMakeFiles/LeetCode.dir/0853-car-fleet.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LeetCode.dir
