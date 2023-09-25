@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0853-car-fleet.cpp"
+#include "0084-largest-rectangle-in-histogram.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -12,8 +12,8 @@ int main() {
     ios
 
     Solution solution;
-    vector<int> position = {10,8,0,5,3}, speed = {2,4,1,1,3};
-    cout << solution.carFleet(12, position, speed);
+    vector<int> heights = {2,1,5,6,2,3};
+    cout << solution.largestRectangleArea(heights);
 
     return 0;
 }

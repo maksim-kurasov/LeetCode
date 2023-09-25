@@ -1,11 +1,11 @@
 # ninja log v5
 16	9430	7172461805355191	CMakeFiles/LeetCode.dir/0150-evaluate-reverse-polish-notation.cpp.obj	a7e127ab6d38233b
-7	4281	7173480183083925	CMakeFiles/LeetCode.dir/main.cpp.obj	958487c7ab3a2041
+15	5668	7173551761831995	CMakeFiles/LeetCode.dir/main.cpp.obj	958487c7ab3a2041
 16	3889	7168155999792058	CMakeFiles/LeetCode.dir/0217-contains-duplicate.cpp.obj	ed25698f82737ed0
-4281	4554	7173480185782356	LeetCode.exe	b17c2dd81f92354d
+5668	5951	7173551764570050	LeetCode.exe	34f9e26b15952930
 10	3854	7168155999469277	CMakeFiles/LeetCode.dir/0242-valid-anagram.cpp.obj	714f62191839d67b
 11	5641	7168185121612424	CMakeFiles/LeetCode.dir/0001-two-sum.cpp.obj	4c1f2ce4923d563d
-1	186	7173497257858227	build.ninja	fe46cf8462764544
+1	186	7173740195876345	build.ninja	fe46cf8462764544
 33	7223	7170895670590795	CMakeFiles/LeetCode.dir/0347-top-k-frequent-elements.cpp.obj	a3aea6a69e33e547
 5617	8031	7168185145534564	CMakeFiles/LeetCode.dir/0049-group-anagrams.cpp.obj	20869e4a522b66
 21	7233	7170895670600768	CMakeFiles/LeetCode.dir/0015-3sum.cpp.obj	f10b06e3f0ac5786
@@ -16,11 +16,12 @@
 16	3952	7171731085320709	CMakeFiles/LeetCode.dir/0020-valid-parentheses.cpp.obj	7aa66a1cfff62e
 18	3967	7171817291518795	CMakeFiles/LeetCode.dir/0155-min-stack.cpp.obj	93f89f44d1968b44
 17	4036	7173458269665791	CMakeFiles/LeetCode.dir/0022-generate-parentheses.cpp.obj	6aec99a713e3b30e
-15	4106	7173480181357257	CMakeFiles/LeetCode.dir/0739-daily-temperatures.cpp.obj	a4d38da6beb74a
 21	6962	7173551264204981	CMakeFiles/LeetCode.dir/0739-daily-temperatures.cpp.obj	a4d38da6beb74a
-33	6964	7173551264394886	CMakeFiles/LeetCode.dir/0853-car-fleet.cpp.obj	2f8632519e22746
-9	7548	7173551270356854	CMakeFiles/LeetCode.dir/main.cpp.obj	958487c7ab3a2041
-7549	8463	7173551279471200	LeetCode.exe	34f9e26b15952930
 29	5199	7173551757050325	CMakeFiles/LeetCode.dir/0853-car-fleet.cpp.obj	2f8632519e22746
-15	5668	7173551761831995	CMakeFiles/LeetCode.dir/main.cpp.obj	958487c7ab3a2041
-5668	5951	7173551764570050	LeetCode.exe	34f9e26b15952930
+37	6651	7173752714279626	CMakeFiles/LeetCode.dir/0084-largest-rectangle-in-histogram.cpp.obj	1f3cf775d0b1fe70
+61	6664	7173752714412269	CMakeFiles/LeetCode.dir/0853-car-fleet.cpp.obj	2f8632519e22746
+17	6846	7173752716224791	CMakeFiles/LeetCode.dir/main.cpp.obj	958487c7ab3a2041
+6847	7355	7173752721336889	LeetCode.exe	9fb5b55d087360ce
+19	4860	7173760365639739	CMakeFiles/LeetCode.dir/0084-largest-rectangle-in-histogram.cpp.obj	1f3cf775d0b1fe70
+9	5172	7173760368702257	CMakeFiles/LeetCode.dir/main.cpp.obj	958487c7ab3a2041
+5173	5401	7173760371020275	LeetCode.exe	9fb5b55d087360ce

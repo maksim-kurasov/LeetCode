@@ -22,27 +22,23 @@ using namespace std;
 class Solution {
 public:
     int carFleet(int target, vector<int>& position, vector<int>& speed) {
-        vector<pair<int, int>> pairs(position.size());
-
-        // We have to sort these pairs by position, so we create an additional vector
+        // Position + Time
+        vector<pair<int, float>> st(position.size());
         for(int i = 0; i < position.size(); ++i) {
-            pairs[i] = {position[i], speed[i]};
+            st[i] = {position[i], (target - position[i]) / (float)speed[i]};
         }
-        sort(pairs.begin(), pairs.end());
+        sort(st.begin(), st.end());
 
-        // Monotonic Stack
-        stack<double> st;
-        for(int i = pairs.size() - 1; i >= 0; --i) {
-            // Pushing TIME into the stack
-            st.push((target - pairs[i].first) / (double)pairs[i].second);
-            if(st.size() >= 2) {
-                // If the last car is slower than the car that is ahead of it, then we shall keep this car in the stack
-                double lastCar = st.top(); st.pop();
-                if(lastCar > st.top()) st.push(lastCar);
+        int fleetCount = 0;
+        float maxTime = 0.0;
+        for(int i = st.size() - 1; i >= 0; --i) {
+            float time = st[i].second;
+            // If the (i-1)th car has greater time than (i)th car, then (i-1)th car will not catch up to the (i)th one
+            if(time > maxTime) {
+                ++fleetCount;
+                maxTime = st[i].second;
             }
         }
-
-        // Number of fleets
-        return st.size();
+        return fleetCount;
     }
 };
