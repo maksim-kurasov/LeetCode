@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0084-largest-rectangle-in-histogram.cpp"
+#include "0015-3sum.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -12,8 +12,9 @@ int main() {
     ios
 
     Solution solution;
-    vector<int> heights = {2,1,5,6,2,3};
-    cout << solution.largestRectangleArea(heights);
+    vector<int> nums = {-2,0,0,2,2};
+    for(auto &s : solution.threeSum(nums))
+        cout << s[0] << " " << s[1] << " " << s[2] << endl;
 
     return 0;
 }

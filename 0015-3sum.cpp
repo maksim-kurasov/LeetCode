@@ -9,32 +9,48 @@ using namespace std;
     Input: nums = [-1,0,1,2,-1,-4]
     Output: [[-1,-1,2],[-1,0,1]]
 
-    Two pointers + seen set + sort array
+    Solution:
+    1. Fix the first number
+    2. Find twoSum with the rest of the array
 */
 
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> ans;
+
+        // Sort nums
         sort(nums.begin(), nums.end());
 
-        set<tuple<int, int, int>> seen;
         for(int i = 0; i < nums.size(); ++i) {
-            int l = i + 1, r = nums.size() - 1;
-            while(l < r) {
-                int sum = nums[i] + nums[l] + nums[r];
+            // Nothing to compensate
+            if(nums[i] > 0) break;
 
-                if(sum < 0) ++l;
-                else if(sum > 0) --r;
+            // Ignore repeated
+            if(i > 0 && nums[i] == nums[i - 1]) continue;
+
+            // Two Sum
+            int l = i + 1, r = nums.size() - 1;
+            vector<int> triplet(3);
+            while(l < r) {
+                // Ignore repeated
+                if(l > i + 1 && nums[l] == nums[l - 1]) {
+                    ++l; continue;
+                }
+
+                int sum = nums[i] + nums[l] + nums[r];
+                if(sum < 0)
+                    ++l;
+                else if(sum > 0)
+                    --r;
                 else {
-                    seen.insert({nums[i], nums[l], nums[r]});
+                    triplet[0] = nums[i];
+                    triplet[1] = nums[l];
+                    triplet[2] = nums[r];
+                    ans.push_back(triplet);
                     ++l; --r;
                 }
             }
-        }
-
-        vector<vector<int>> ans;
-        for(auto& triplet : seen) {
-            ans.push_back({get<0>(triplet), get<1>(triplet), get<2>(triplet)});
         }
         return ans;
     }
