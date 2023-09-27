@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0015-3sum.cpp"
+#include "0011-container-with-most-water.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -12,9 +12,8 @@ int main() {
     ios
 
     Solution solution;
-    vector<int> nums = {-2,0,0,2,2};
-    for(auto &s : solution.threeSum(nums))
-        cout << s[0] << " " << s[1] << " " << s[2] << endl;
+    vector<int> heights = {1,2,4,3};
+    cout << solution.maxArea(heights);
 
     return 0;
 }
