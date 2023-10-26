@@ -25,7 +25,7 @@ public:
             r = n1 - 1;
         while(l <= r) {
             int mid1 = (l + r) / 2;
-            int mid2 = (n2 - mid1)
+            int mid2 = (n2 - mid1);
 
             if(nums1[mid1] <= nums2[mid2 + 1] && nums2[mid2] <= nums1[mid1 + 1]) {
                 if((n1 + n2) % 2 == 0)

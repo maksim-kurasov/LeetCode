@@ -8,25 +8,22 @@
 using namespace std;
 
 int main() {
-    ll k; cin >> k;
-    ll sum = 0;
-    for(int i = 1; i <= k; ++i) {
-        ll a; cin >> a;
-        sum += a;
-        if(i > 2 && sum < 180 * (i - 2)) {
-            cout << -1 << "\n";
-            return 0;
+    ll t; cin >> t;
+    while(t--) {
+        ll ans = 0;
+        ll n; cin >> n;
+        ll prev; cin >> prev;
+        for(int i = 1; i < n; ++i) {
+            ll a; cin >> a;
+            if(prev <= a) {
+                prev = a;
+                continue;
+            }
+            ll k = ceil(log2((long double)prev / (long double)a));
+            prev = a * pow(2, k);
+            ans += k;
         }
-    }
-
-    int minVertices = ceil(sum / 180.0) + 2;
-    cout << minVertices << " ";
-
-    for(int i = minVertices; i < 10000; ++i) {
-        if((double)(180 * (i - 2) - sum) / (i - k) > 179.0) {
-            cout << i - 1 << "\n";
-            return 0;
-        }
+        cout << ans << endl;
     }
 
     return 0;
