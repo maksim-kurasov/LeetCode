@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "0143-reorder-list.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -8,22 +9,12 @@
 using namespace std;
 
 int main() {
-    ll t; cin >> t;
-    while(t--) {
-        ll ans = 0;
-        ll n; cin >> n;
-        ll prev; cin >> prev;
-        for(int i = 1; i < n; ++i) {
-            ll a; cin >> a;
-            if(prev <= a) {
-                prev = a;
-                continue;
-            }
-            ll k = ceil(log2((long double)prev / (long double)a));
-            prev = a * pow(2, k);
-            ans += k;
-        }
-        cout << ans << endl;
+    Solution solution;
+    ListNode *a = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+    solution.reorderList(a);
+    while(a) {
+        cout << a->val << " ";
+        a = a->next;
     }
 
     return 0;
