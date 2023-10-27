@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0143-reorder-list.cpp"
+#include "0019-remove-nth-node-from-end-of-list.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -10,8 +10,8 @@ using namespace std;
 
 int main() {
     Solution solution;
-    ListNode *a = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-    solution.reorderList(a);
+    ListNode *a = new ListNode(1, new ListNode(2));
+    a = solution.removeNthFromEnd(a, 1);
     while(a) {
         cout << a->val << " ";
         a = a->next;
