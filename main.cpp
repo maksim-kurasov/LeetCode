@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0138-copy-list-with-random-pointer.cpp"
+#include "0002-add-two-numbers.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -10,18 +10,12 @@ using namespace std;
 
 int main() {
     Solution solution;
-    Node *a = new Node(7);
-    a->random = NULL;
-    Node *b = a;
-    Node *memo;
-    a->next = new Node(13); a->random = NULL; memo = a; a = a->next;
-    a->next = new Node(11); a->random = memo; a = a->next;
-    a->next = new Node(10); a = a->next;
-    a->next = new Node(1);
-    a = solution.copyRandomList(b);
-    while(a) {
-        cout << a->val << " ";
-        a = a->next;
+    ListNode* a = new ListNode(2, new ListNode(4, new ListNode(3)));
+    ListNode* b = new ListNode(5, new ListNode(6, new ListNode(4)));
+    ListNode* c = solution.addTwoNumbers(a, b);
+    while(c) {
+        cout << c->val << " ";
+        c = c->next;
     }
 
     return 0;
