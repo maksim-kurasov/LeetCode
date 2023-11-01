@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0023-merge-k-sorted-lists.cpp"
+#include "0025-reverse-nodes-in-k-group.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -13,10 +13,9 @@ int main() {
     ios
 
     Solution solution;
-    ListNode *l1 = new ListNode(-1, new ListNode(-1, new ListNode(-1)));
-    ListNode *l2 = new ListNode(-2, new ListNode(-2, new ListNode(-1)));
-    vector<ListNode*> vec = {l1, l2};
-    ListNode *ans = solution.mergeKLists(vec);
+    ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+
+    ListNode* vec = solution.reverseKGroup(l1, 2);
 
     return 0;
 }
