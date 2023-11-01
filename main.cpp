@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0025-reverse-nodes-in-k-group.cpp"
+#include "0104-maximum-depth-of-binary-tree.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -13,9 +13,8 @@ int main() {
     ios
 
     Solution solution;
-    ListNode *l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-
-    ListNode* vec = solution.reverseKGroup(l1, 2);
+    TreeNode *root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+    cout << solution.maxDepth(root);
 
     return 0;
 }
