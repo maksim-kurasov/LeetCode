@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "1448-count-good-nodes-in-binary-tree.cpp"
+#include "0105-construct-binary-tree-from-preorder-and-inorder-traversal.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -13,8 +13,10 @@ int main() {
     ios
 
     Solution solution;
-    TreeNode *root = new TreeNode(3, new TreeNode(1, new TreeNode(3), nullptr), new TreeNode(4, new TreeNode(1), new TreeNode(5)));
-    cout << solution.goodNodes(root);
+    vector<int> preorder = {3,9,20,15,7};
+    vector<int> inorder = {9,3,15,20,7};
+
+    TreeNode *ans = solution.buildTree(preorder, inorder);
 
     return 0;
 }
