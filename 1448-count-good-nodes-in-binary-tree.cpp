@@ -14,7 +14,7 @@ using namespace std;
     Explanation: Nodes in blue are good.
 
     Solution:
-    Remember max at each step, make ans counter global
+    Remember max at each step
 */
 
 struct TreeNode {
@@ -28,23 +28,20 @@ struct TreeNode {
 
 class Solution {
 public:
-    void solution(TreeNode* root, int max, int &ans) {
+    int solution(TreeNode* root, int maxValue) {
         if(!root)
-            return;
+            return 0;
 
-        if(root->val >= max) {
-            max = root->val;
-            ++ans;
-        }
+        int result = root->val >= maxValue;
+        maxValue = max(maxValue, root->val);
 
-        solution(root->left, max, ans);
-        solution(root->right, max, ans);
+        result += solution(root->left, maxValue);
+        result += solution(root->right, maxValue);
+
+        return result;
     }
 
     int goodNodes(TreeNode* root) {
-        int ans = 0;
-        solution(root, INT_MIN, ans);
-
-        return ans;
+        return solution(root, root->val);
     }
 };

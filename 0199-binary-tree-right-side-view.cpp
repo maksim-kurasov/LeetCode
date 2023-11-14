@@ -11,7 +11,7 @@ using namespace std;
     Output: [1,3,4]
 
     Solution:
-    Breadth-First Search
+    Breadth-First Search, use deque, always choose rightmost element
 */
 
 struct TreeNode {
