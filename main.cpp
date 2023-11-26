@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "0105-construct-binary-tree-from-preorder-and-inorder-traversal.cpp"
+#include "0124-binary-tree-maximum-path-sum.cpp"
 
 #define ios ios::sync_with_stdio(0); cin.tie(0);
 #define ll long long
@@ -13,10 +13,9 @@ int main() {
     ios
 
     Solution solution;
-    vector<int> preorder = {3,9,20,15,7};
-    vector<int> inorder = {9,3,15,20,7};
+    TreeNode *tree = new TreeNode(1, new TreeNode(-2, new TreeNode(1, new TreeNode(-1), nullptr), new TreeNode(3)), new TreeNode(-3, new TreeNode(-2), nullptr));
 
-    TreeNode *ans = solution.buildTree(preorder, inorder);
+    cout << solution.maxPathSum(tree);
 
     return 0;
 }
