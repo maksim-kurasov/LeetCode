@@ -81,13 +81,8 @@ private:
 
     Node *root;
 };
-/**
- * Your WordDictionary object will be instantiated and called as such:
- * WordDictionary* obj = new WordDictionary();
- * obj->addWord(word);
- * bool param_2 = obj->search(word);
- */
 
+/**
 int main() {
     WordDictionary wordDictionary;
     wordDictionary.addWord("a");
@@ -101,3 +96,4 @@ int main() {
     cout << wordDictionary.search("a.") << endl;
 
 }
+**/
