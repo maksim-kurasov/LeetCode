@@ -13,7 +13,7 @@ using namespace std;
 
     Solution:
     Sort the array to detect duplicates easily (if nums[i] == nums[i - 1] then continue)
-    At each step include [current], add element to [current] and backtrack
+    At each step include [current] to [ans], add element to [current] and backtrack
 */
 
 class Solution {
