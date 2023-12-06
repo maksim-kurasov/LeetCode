@@ -43,11 +43,5 @@ public:
 
 
 int main() {
-    vector<int> nums = {};
-    KthLargest kthLargest(1, nums);
-    cout << kthLargest.add(-3);
-    kthLargest.add(-2);
-    kthLargest.add(-4);
-    cout << kthLargest.add(0);
-    kthLargest.add(4);
+
 }
