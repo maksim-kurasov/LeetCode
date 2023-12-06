@@ -53,9 +53,3 @@ public:
         }
     }
 };
-
-int main() {
-    int n = 13;
-    Solution solution;
-    auto t = solution.solveNQueens(n);
-}
