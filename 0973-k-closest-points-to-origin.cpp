@@ -20,24 +20,29 @@ using namespace std;
 
     Solution:
     Use priority queue
+    Distance = x^2 + y^2 (int)
 **/
 
 class Solution {
 public:
-    int lastStoneWeight(vector<int>& stones) {
-        priority_queue<int, vector<int>, less<>> queue(stones.begin(), stones.end());
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> queue;
 
-        int x, y, res;
-        while(queue.size() > 1) {
-            y = queue.top(); queue.pop();
-            x = queue.top(); queue.pop();
-
-            res = y - x;
-            if(res != 0)
-                queue.push(res);
+        for(int i = 0; i < points.size(); ++i) {
+            queue.push(make_pair(points[i][0] * points[i][0] + points[i][1] * points[i][1], i));
         }
 
-        return queue.size() > 0 ? queue.top() : 0;
+        vector<vector<int>> ans;
+        while(k--) {
+            int index = queue.top().second;
+            queue.pop();
+            ans.emplace_back(std::move(points[index]));
+        }
     }
 };
 
+/**
+int main() {
+
+}
+**/
