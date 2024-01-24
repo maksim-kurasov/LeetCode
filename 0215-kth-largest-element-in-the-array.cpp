@@ -12,7 +12,7 @@ using namespace std;
     Output: 5
 
     Solution:
-
+    Quick Select of Priority Queue
 **/
 
 // Quick Select
