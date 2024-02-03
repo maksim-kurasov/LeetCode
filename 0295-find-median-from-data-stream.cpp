@@ -54,13 +54,3 @@ private:
     priority_queue<int, vector<int>, less<>> maxHeap;
     priority_queue<int, vector<int>, greater<>> minHeap;
 };
-
-
-int main() {
-    MedianFinder finder;
-    finder.addNum(1);
-    finder.addNum(2);
-    finder.addNum(3);
-
-    cout << finder.findMedian();
-}
