@@ -51,7 +51,6 @@ public:
             clone->neighbors.push_back(cloneGraph(neighbourNode));
         }
 
-
         return clone;
     }
 private:
