@@ -3,90 +3,65 @@
 using namespace std;
 
 /**
-    There is an m x n rectangular island that borders both the Pacific Ocean
-    and Atlantic Ocean. The Pacific Ocean touches the island's left and top
-    edges, and the Atlantic Ocean touches the island's right and bottom edges.
+    Given an m x n matrix board containing 'X' and 'O', capture all regions that are
+    4-directionally surrounded by 'X'.
 
-    The island is partitioned into a grid of square cells. You are given
-    an m x n integer matrix heights where heights[r][c] represents the
-    height above sea level of the cell at coordinate (r, c).
+    A region is captured by flipping all 'O's into 'X's in that surrounded region.
 
-    The island receives a lot of rain, and the rain water can flow to
-    neighboring cells directly north, south, east, and west if the
-    neighboring cell's height is less than or equal to the current
-    cell's height. Water can flow from any cell adjacent to an ocean
-    into the ocean.
-
-    Return a 2D list of grid coordinates result where result[i] = [ri, ci]
-    denotes that rain water can flow from cell (ri, ci) to both the Pacific
-    and Atlantic oceans.
-
-    Input: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
-    Output: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
+    Input: board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+    Output: [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+    Explanation: Notice that an 'O' should not be flipped if:
+    - It is on the border, or
+    - It is adjacent to an 'O' that should not be flipped.
+    The bottom 'O' is on the border, so it is not flipped.
+    The other three 'O' form a surrounded region, so they are flipped.
 
     Solution:
-    We first find out from what squares can we get to Pacific Ocean. Then we
-    do the same for Atlantic Ocean.
-
-    Notice, that northern and western edges of the matrix can flawlessly
-    flow into Pacific Ocean. Eastern and southern edges - into Atlantic Ocean.
-    Use this fact to dfs the matrix (if square {x, y} can flow into square {x1, y1},
-    and {x1, y1} is an edge, then {x, y} can flow into the same ocean {x1, y1} can)
+    Remember unsurrounded regions, then change every other 'O' except ones we've
+    remembered to 'X'
 **/
 
 class Solution {
 public:
-    vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
-        int N = heights.size();
-        int M = heights[0].size();
+    void solve(vector<vector<char>>& board) {
+        notFlippable = vector<vector<bool>>(board.size(), vector<bool>(board[0].size()));
 
-        vector<vector<bool>> pacificOcean(N, vector<bool>(M, false));
-        vector<vector<bool>> atlanticOcean(N, vector<bool>(M, false));
-
-        for(int i = 0; i < N; ++i) {
-            dfs(heights, pacificOcean, i, 0, -1);
-            dfs(heights, atlanticOcean, i, M - 1, -1);
+        for(int i = 0; i < board.size(); ++i) {
+            dfs(board, i, 0);
+            dfs(board, i, board[0].size() - 1);
         }
 
-        for(int j = 0; j < M; ++j) {
-            dfs(heights, pacificOcean, 0, j, -1);
-            dfs(heights, atlanticOcean, N - 1, j, -1);
+        for(int j = 0; j < board[0].size(); ++j) {
+            dfs(board, 0, j);
+            dfs(board, board.size() - 1, j);
         }
 
-        vector<vector<int>> ans;
-        for(int i = 0; i < N; ++i) {
-            for(int j = 0; j < M; ++j) {
-                if(pacificOcean[i][j] and atlanticOcean[i][j])
-                    ans.push_back({i, j});
+        for(int i = 0; i < board.size(); ++i) {
+            for(int j = 0; j < board[0].size(); ++j) {
+                if(!notFlippable[i][j]) board[i][j] = 'X';
             }
         }
-
-        return ans;
     }
 private:
-    int di[4] = {1, -1, 0, 0};
-    int dj[4] = {0, 0, 1, -1};
+    int dir[5] = {0, 1, 0, -1, 0};
+    vector<vector<bool>> notFlippable;
 
-    void dfs(auto& heights, auto& ocean, int i, int j, int prev) {
-        if(i < 0 or j < 0 or i >= heights.size() or j >= heights[0].size() or prev > heights[i][j] or ocean[i][j])
+    void dfs(auto& board, int i, int j) {
+        if(i < 0 || j < 0 || i >= board.size() || j >= board[0].size() || board[i][j] == 'X' || notFlippable[i][j])
             return;
 
-        ocean[i][j] = true;
-        for(int k = 0; k < 4; ++k) {
-            dfs(heights, ocean, i + di[k], j + dj[k], heights[i][j]);
+        notFlippable[i][j] = true;
+        for(int d = 0; d < 4; ++d) {
+            dfs(board, i + dir[d], j + dir[d + 1]);
         }
     }
 };
 
 int main() {
-    vector<vector<int>> heights = {{1, 2},
-                                   {3, 4}};
+    vector<vector<char>> array = {{'O', 'O', 'O'},
+                                  {'O', 'O', 'O'},
+                                  {'O', 'O', 'O'}};
 
     Solution sol;
-    auto t = sol.pacificAtlantic(heights);
-    for(auto r : t) {
-        for(auto e : r)
-            cout << e << " ";
-        cout << endl;
-    }
+    sol.solve(array);
 }
