@@ -56,12 +56,3 @@ private:
         }
     }
 };
-
-int main() {
-    vector<vector<char>> array = {{'O', 'O', 'O'},
-                                  {'O', 'O', 'O'},
-                                  {'O', 'O', 'O'}};
-
-    Solution sol;
-    sol.solve(array);
-}
