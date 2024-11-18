@@ -14,6 +14,7 @@ using namespace std;
 
     Solution:
     Fix a and b. Then use two pointers on a sorted array to find c and d.
+    Skip repeating numbers.
 **/
 
 class Solution {
